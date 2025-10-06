@@ -2,17 +2,18 @@ function Products() {
   return (
     <div className="products">
       <h1>Our Products</h1>
-      <ul>
-        <li>Streaky Bacon</li>
-        <li>Pork Shoulder Chops</li>
-        <li>Pork Belly</li>
-        <li>Gourmet Burger Patties</li>
-        <li>Artisan Sausages</li>
-        <li>Premium Pet Mince</li>
-        <li>Custom Cuts & More</li>
-        <li>Chicken (Whole & Cuts)</li>
-        <li>Farm Eggs</li>
-      </ul>
+      <div>
+        <div>Streaky Bacon</div>
+        <div>Pork Shoulder Chops</div>
+        <div>Pork Belly</div>
+        <div>Gourmet Burger Patties</div>
+        <div>Artisan Sausages</div>
+        <div>Premium Pet Mince</div>
+        <div>Custom Cuts & More</div>
+        <div>Chicken (Whole & Cuts)</div>
+        <div>Farm Eggs</div>
+        <div>Rabbit Meat</div>
+      </div>
       <p><em>Full product list and custom cuts available on request.</em></p>
     </div>
   );

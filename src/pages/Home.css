@@ -21,22 +21,24 @@
   border-radius: 1.5rem;
   text-align: center;
   color: #fff;
-  width: 100%;
+  width: 90%;
   max-width: 600px;
   margin: 2rem auto;
+  box-sizing: border-box;
 }
 
 .hero-title {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  text-shadow: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  text-shadow: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  line-height: 1.6;
 }
 
 .cta-btn {
@@ -91,14 +93,95 @@
   color: #333;
 }
 
+/* Intro Section */
+.intro {
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.intro h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.intro > p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 1rem auto;
+  line-height: 1.6;
+}
+
 /* Responsive Design */
 @media (max-width: 800px) {
-  .features {
-    flex-direction: column;
-    align-items: center;
+  .enhanced-hero {
+    min-height: 50vh;
+  }
+  .hero-overlay {
+    padding: 2rem 1.5rem;
+    width: 85%;
   }
   .hero-title {
     font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
+  .features {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .feature {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .enhanced-hero {
+    min-height: 45vh;
+  }
+  .hero-overlay {
+    padding: 1.5rem 1rem;
+    border-radius: 1rem;
+    width: 90%;
+    margin: 1rem auto;
+  }
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .cta-btn {
+    font-size: 1rem;
+    padding: 0.65rem 1.5rem;
+  }
+  .feature {
+    padding: 1.2rem 1rem;
+  }
+  .feature-icon {
+    font-size: 2rem;
+  }
+  .feature h3 {
+    font-size: 1.1rem;
+  }
+  .feature p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+  .cta-btn {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.25rem;
   }
 }
 
@@ -110,4 +193,364 @@
 body {
   margin: 0;
   padding: 0;
+}
+
+/* Promotional Sections */
+.promo-section {
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+  padding: 3rem 1.5rem;
+  margin: 3rem 0;
+  border-radius: 12px;
+}
+
+.promo-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.promo-header h2 {
+  font-size: 2.2rem;
+  color: #b71c1c;
+  margin-bottom: 0.5rem;
+}
+
+.promo-header p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.promo-deals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.promo-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid transparent;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(183, 28, 28, 0.15);
+  border-color: #e63946;
+}
+
+.promo-card.highlight {
+  border: 2px solid #e63946;
+  background: linear-gradient(135deg, #fff 0%, #fffafa 100%);
+}
+
+.promo-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: linear-gradient(135deg, #e63946 0%, #b71c1c 100%);
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
+}
+
+.promo-card h3 {
+  color: #b71c1c;
+  font-size: 1.4rem;
+  margin: 0 0 1rem 0;
+}
+
+.promo-description {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.promo-price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.old-price {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 1rem;
+}
+
+.new-price {
+  color: #e63946;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.promo-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, #e63946 0%, #b71c1c 100%);
+  color: #fff;
+  padding: 0.85rem 2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+}
+
+.promo-cta:hover {
+  background: linear-gradient(135deg, #b71c1c 0%, #8b1515 100%);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(230, 57, 70, 0.4);
+}
+
+/* CTA Banner Section */
+.cta-banner {
+  background: linear-gradient(135deg, #b71c1c 0%, #e63946 100%);
+  color: #fff;
+  padding: 3.5rem 2rem;
+  margin: 3rem 0;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(183, 28, 28, 0.3);
+}
+
+.cta-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.cta-content > p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.cta-primary, .cta-secondary {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.cta-primary {
+  background: #fff;
+  color: #b71c1c;
+}
+
+.cta-primary:hover {
+  background: #f8f8f8;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.cta-secondary {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.cta-secondary:hover {
+  background: rgba(255,255,255,0.3);
+  transform: scale(1.05);
+}
+
+.cta-subtext {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-top: 1rem;
+}
+
+/* Secondary CTA Section */
+.secondary-cta {
+  background: #f8f9fa;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 12px;
+  margin: 3rem 0;
+  border: 2px solid #e0e0e0;
+}
+
+.secondary-cta h3 {
+  font-size: 2rem;
+  color: #b71c1c;
+  margin-bottom: 1rem;
+}
+
+.secondary-cta p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+}
+
+.cta-btn-secondary {
+  display: inline-block;
+  background: #b71c1c;
+  color: #fff;
+  padding: 0.9rem 2.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(183, 28, 28, 0.2);
+}
+
+.cta-btn-secondary:hover {
+  background: #8b1515;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(183, 28, 28, 0.3);
+}
+
+/* Responsive Styles for Promotional Sections */
+@media (max-width: 800px) {
+  .promo-section {
+    padding: 2.5rem 1.25rem;
+    margin: 2rem 0;
+  }
+  .promo-header h2 {
+    font-size: 1.8rem;
+  }
+  .promo-header p {
+    font-size: 1rem;
+  }
+  .promo-deals {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .cta-banner {
+    padding: 2.5rem 1.5rem;
+  }
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+  .cta-content > p {
+    font-size: 1.05rem;
+  }
+  .cta-buttons {
+    gap: 1rem;
+  }
+  .secondary-cta {
+    padding: 2.5rem 1.5rem;
+  }
+  .secondary-cta h3 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .promo-section {
+    padding: 2rem 1rem;
+    border-radius: 8px;
+  }
+  .promo-header h2 {
+    font-size: 1.6rem;
+  }
+  .promo-header p {
+    font-size: 0.95rem;
+  }
+  .promo-card {
+    padding: 1.5rem 1.25rem;
+  }
+  .promo-card h3 {
+    font-size: 1.25rem;
+  }
+  .promo-description {
+    font-size: 0.95rem;
+  }
+  .new-price {
+    font-size: 1.4rem;
+  }
+  .promo-cta {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+  .cta-banner {
+    padding: 2rem 1.25rem;
+    border-radius: 12px;
+  }
+  .cta-content h2 {
+    font-size: 1.75rem;
+  }
+  .cta-content > p {
+    font-size: 1rem;
+  }
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .cta-primary, .cta-secondary {
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 280px;
+  }
+  .cta-subtext {
+    font-size: 0.9rem;
+  }
+  .secondary-cta {
+    padding: 2rem 1.25rem;
+  }
+  .secondary-cta h3 {
+    font-size: 1.5rem;
+  }
+  .secondary-cta p {
+    font-size: 1rem;
+  }
+  .cta-btn-secondary {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .promo-header h2 {
+    font-size: 1.4rem;
+  }
+  .promo-badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
+  }
+  .cta-content h2 {
+    font-size: 1.5rem;
+  }
+  .cta-content > p {
+    font-size: 0.95rem;
+  }
+  .cta-primary, .cta-secondary {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
 } 
